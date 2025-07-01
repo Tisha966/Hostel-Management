@@ -9,6 +9,9 @@ import dotenv from "dotenv";
 import connectDB from "./config/mongoDBConfig.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 dotenv.config();
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
 connectDB();
 const app = express();
 
