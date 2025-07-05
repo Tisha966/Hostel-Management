@@ -11,7 +11,7 @@ import { protect, admin } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 router.route("/all").get(protect, getAllStudents);
-router.route("/addStudent").post(protect, addStudent); // remove admin 
+router.route("/addStudent").post(protect,admin, addStudent); // remove admin 
 router
   .route("/:id")
   .get(protect, getStudentById)

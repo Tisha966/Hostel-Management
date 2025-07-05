@@ -13,6 +13,8 @@ const RegisterView = ({ location, history }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState(null);
+  const [adminCode, setAdminCode] = useState('');
+
 
   const dispatch = useDispatch();
 
@@ -82,6 +84,17 @@ const RegisterView = ({ location, history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
+
+        <Form.Group controlId="adminCode">
+  <Form.Label>Admin Code (only for admins)</Form.Label>
+  <Form.Control
+    type="text"
+    placeholder="Enter admin code"
+    value={adminCode}
+    onChange={(e) => setAdminCode(e.target.value)}
+  />
+</Form.Group>
+
 
         <Button type="submit" variant="primary">
           Register

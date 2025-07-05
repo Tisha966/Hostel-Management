@@ -4,6 +4,7 @@ import User from "../models/user.js";
 
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+  
 
   const user = await User.findOne({ email });
 
@@ -22,7 +23,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, adminCode } = req.body;
 
   const userExists = await User.findOne({ email });
 
@@ -31,10 +32,13 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("User already exists");
   }
 
+    const isAdmin = adminCode === process.env.ADMIN_CODE;
+
   const user = await User.create({
     name,
     email,
     password,
+     isAdmin,
   });
 
   if (user) {
