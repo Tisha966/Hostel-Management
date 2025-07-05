@@ -1,14 +1,17 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
+
 import userRoutes from "./routes/userRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import attendanceRoutes from "./routes/attendanceRoutes.js";
 import path from "path";
 import morgan from "morgan";
 
-import dotenv from "dotenv";
+
 import connectDB from "./config/mongoDBConfig.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
-dotenv.config();
+
 console.log("NODE_ENV:", process.env.NODE_ENV);
 console.log("MONGO_URI:", process.env.MONGO_URI);
 

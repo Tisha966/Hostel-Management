@@ -35,3 +35,4 @@ if (process.argv[2] === "-d") {
 } else {
   importData();
 }
+//$env:NODE_OPTIONS="--openssl-legacy-provider"
