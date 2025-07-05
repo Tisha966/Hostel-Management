@@ -1,4 +1,4 @@
-# Hostel Management Application
+# Smart Hostel Management Application
 
 Created using MERN Stack 
 
