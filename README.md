@@ -16,6 +16,7 @@ NODE_ENV = development/production
 PORT = 5000
 MONGO_URI= Mongo Uri
 JWT_SECRET= JWT Key
+ADMIN_CODE= ADMIN CODE
 ```
 
 ## Features
